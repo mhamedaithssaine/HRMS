@@ -47,6 +47,7 @@ class RoleSeeder extends Seeder
             foreach ($permissions as $permissionName) {
                 $permission = Permission::firstOrCreate(['name' => $permissionName]);
                 $role->givePermissionTo($permission);
+
             }
         }
 
