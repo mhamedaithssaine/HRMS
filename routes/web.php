@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmploisController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContractController;
+use App\Http\Controllers\DepartmentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,7 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('departments', DepartmentController::class);
     Route::resource('emplois', EmploisController::class);
-
+    Route::resource('contracts', ContractController::class);
 });
 
 require __DIR__.'/auth.php';
