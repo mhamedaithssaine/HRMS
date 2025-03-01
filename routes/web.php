@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmploisController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContractController;
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('departments', DepartmentController::class);
     Route::resource('emplois', EmploisController::class);
     Route::resource('contracts', ContractController::class);
+    Route::resource('users', UserController::class);
 });
 
 require __DIR__.'/auth.php';
