@@ -125,8 +125,9 @@
                             <label for="role" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Rôle:</label>
                             <select name="role" id="role" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" required>
                                 <option value="">Sélectionnez un rôle</option>
+
                                 @foreach($roles as $role)
-                                    <option value="{{ $role->name }}" {{ old('role') == $role->name ? 'selected' : '' }}>{{ $role->name }}</option>
+                                    <option value="{{ $role->name  }}" {{ old('role') == $role->name ? 'selected' : '' }}>{{ $role->name }}</option>
                                 @endforeach
                             </select>
                             @error('role')

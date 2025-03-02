@@ -29,7 +29,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-
+        
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -39,7 +39,6 @@ class UserController extends Controller
             'date_of_birth' => $request->date_of_birth,
             'address' => $request->address,
             'recrut_date' => $request->recrut_date,
-            'contract_type' => $request->contract_type,
             'salary' => $request->salary,
             'status' => $request->status,
             'department_id' => $request->department_id,
@@ -61,7 +60,7 @@ class UserController extends Controller
     {
         $roles = Role::all();
         $departments = Department::all();
-        $emplois = Emplois::all();
+        $emplois = Emplois::with('department')->get()->groupBy('department_id');
         $contracts = Contract::all();
         return view('users.edit', compact('user', 'roles', 'departments','emplois', 'contracts'));
     }
@@ -77,7 +76,6 @@ class UserController extends Controller
             'date_of_birth' => $request->date_of_birth,
             'address' => $request->address,
             'recrut_date' => $request->recrut_date,
-            'contract_type' => $request->contract_type,
             'salary' => $request->salary,
             'status' => $request->status,
             'department_id' => $request->department_id,

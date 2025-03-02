@@ -29,7 +29,6 @@ class User extends Authenticatable
         'date_of_birth',
         'address',
         'recrut_date',
-        'contract_type',
         'salary',
         'status',
         'department_id',
