@@ -53,7 +53,8 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $cursus = $user->cursus; 
+        return view('users.show', compact('user','cursus'));
     }
 
     public function edit(User $user)

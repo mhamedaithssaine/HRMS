@@ -19,7 +19,7 @@
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <label for="start_date" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Date de Début:</label>
+                            <label for="start_date" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"  >Date de Début:</label>
                             <input type="date" name="start_date" id="start_date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" value="{{ old('start_date') }}" required>
                             @error('start_date')
                                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
