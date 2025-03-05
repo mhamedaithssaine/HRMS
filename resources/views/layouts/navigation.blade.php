@@ -11,11 +11,14 @@
                 </div>
 
                 <!-- Navigation Links -->
+            @can('maange departments')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('departments.index')" :active="request()->routeIs('dashboard')">
                         {{ __('Departement') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('emplois.index')" :active="request()->routeIs('dashboard')">
                         {{ __('Emplois') }}
@@ -29,6 +32,11 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('dashboard')">
                         {{ __('Employees') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('hierarchy.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('Hierarchy') }}
                     </x-nav-link>
                 </div>
                

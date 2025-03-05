@@ -6,6 +6,7 @@ use App\Http\Controllers\CursusController;
 use App\Http\Controllers\EmploisController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContractController;
+use App\Http\Controllers\HierarchyController;
 use App\Http\Controllers\DepartmentController;
 
 Route::get('/', function () {
@@ -25,11 +26,16 @@ Route::middleware('auth')->group(function () {
     Route::resource('contracts', ContractController::class);
     Route::resource('users', UserController::class);
     Route::resource('cursus', CursusController::class);
-    Route::post('users/{user}/cursus', [CursusController::class, 'store'])->name('cursus.store');
-    Route::get('users/{user}/cursus/create', [CursusController::class, 'create'])->name('cursus.create');
-    Route::put('cursus/{cursu}', [CursusController::class, 'update'])->name('cursus.update');
+    Route::get('/cursus/create/{user}', [CursusController::class, 'create'])->name('cursus.create');
+    Route::post('/cursus', [CursusController::class, 'store'])->name('cursus.store');
+    Route::get('/cursus/{cursus}/edit', [CursusController::class, 'edit'])->name('cursus.edit'); 
+    Route::put('/cursus/{cursus}', [CursusController::class, 'update'])->name('cursus.update');
+    Route::get('/users/{user}', [CursusController::class, 'show'])->name('users.show');
+    Route::get('/emplois-by-department/{department_id}', [CursusController::class, 'getEmploisByDepartment'])->name('emplois.by.department');
+    Route::get('/hierarchy', [HierarchyController::class, 'hierarchy'])->name('hierarchy.index');
 
-
+    
+    
 
 });
 
