@@ -24,7 +24,6 @@
                         @csrf
                         @method('PUT')
 
-                        <!-- Champ pour le grade -->
                         <div class="mb-4">
                             <label for="grade" class="block text-sm font-medium text-gray-700">Grade</label>
                             <select id="grade" name="grade" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -34,19 +33,16 @@
                             </select>
                         </div>
 
-                        <!-- Champ pour le campus -->
                         <div class="mb-4">
                             <label for="campus" class="block text-sm font-medium text-gray-700">Campus</label>
                             <input type="text" id="campus" name="campus" value="{{ $cursus->campus }}" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         </div>
 
-                        <!-- Champ pour la formation -->
                         <div class="mb-4">
                             <label for="formation" class="block text-sm font-medium text-gray-700">Formation</label>
                             <input type="text" id="formation" name="formation" value="{{ $cursus->formation }}" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         </div>
 
-                        <!-- Champ pour le département -->
                         <div class="mb-4">
                             <label for="department_id" class="block text-sm font-medium text-gray-700">Département</label>
                             <select id="department_id" name="department_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -56,7 +52,6 @@
                             </select>
                         </div>
 
-                        <!-- Champ pour l'emploi -->
                         <div class="mb-4">
                             <label for="emplois_id" class="block text-sm font-medium text-gray-700">Emploi</label>
                             <select id="emplois_id" name="emplois_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -66,7 +61,6 @@
                             </select>
                         </div>
 
-                        <!-- Champ pour le contrat -->
                         <div class="mb-4">
                             <label for="contract_id" class="block text-sm font-medium text-gray-700">Contrat</label>
                             <select id="contract_id" name="contract_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -76,13 +70,11 @@
                             </select>
                         </div>
 
-                        <!-- Champ pour les remarques -->
                         <div class="mb-4">
                             <label for="remarques" class="block text-sm font-medium text-gray-700">Remarques</label>
                             <textarea id="remarques" name="remarques" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">{{ $cursus->remarques }}</textarea>
                         </div>
 
-                        <!-- Bouton de soumission -->
                         <div class="mt-6">
                             <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 active:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring ring-blue-300 transition ease-in-out duration-150">
                                 Mettre à jour
@@ -95,7 +87,6 @@
         </div>
     </div>
 
-    <!-- Script pour charger les emplois dynamiquement -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const departmentSelect = document.getElementById('department_id');
