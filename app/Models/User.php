@@ -39,9 +39,16 @@ class User extends Authenticatable
         'department_id',
         'emplois_id',
         'contract_id',
+        'solde_conges',
+        'solde_recuperation',
+
 
     ];
 
+    protected $casts = [
+        'recrut_date' => 'date',
+        'date_of_birth' => 'date',
+    ];
     public function department()
     {
         return $this->belongsTo(Department::class);
@@ -62,6 +69,19 @@ class User extends Authenticatable
     return $this->hasMany(Cursus::class);
 }
 
+    public function conges()
+    {
+        return $this->hasMany(Conge::class, 'user_id');
+    }
+
+
+    public function demandesRecuperation()
+    {
+        return $this->hasMany(DemandeRecuperation::class);
+    }
+
+
+   
     /**
      * The attributes that should be hidden for serialization.
      *

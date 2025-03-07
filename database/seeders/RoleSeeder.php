@@ -17,27 +17,36 @@ class RoleSeeder extends Seeder
     {
       $roles=[
         'admin'=>[
-            'manage users',
-            'maange emplyees',
-            'maange departments',
-            'maange roles',
-            'maange settings',
+            'manage Emplyees',
+            'maange Emplyois',
+            'maange Departments',
+            'maange Hierarchy',
+            'maange Conges',
+            'notification',
+            'manage profile',
 
         ],
         'rh'=>[
-            'maange emplyees',
-            'view emplyees',
-            'maange contrats',
-            'maange formation',
+            'manage Emplyees',
+            'maange Emplyois',
+            'maange Hierarchy',
+            'maange Conges',
+            'notification',
+            'manage profile',
+           
 
         ],
         'manager'=>[
-            'view emplyees',
-            'manage team',
+            'maange Hierarchy',
+            'maange Conges',
+            'notification',
+            'manage profile',
+            'demande conges',
         ],
         'employee'=>[
-            'view prfile',
-            'edit profile',
+            'maange Hierarchy',
+            'manage profile',
+            'demande conges',
         ],
     ];
 
