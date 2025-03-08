@@ -131,6 +131,7 @@ Les seeders sont utilisés pour initialiser la base de données avec des rôles 
 
 RoleSeeder
 Copier
+``
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -187,6 +188,7 @@ class RoleSeeder extends Seeder
         }
     }
 }
+``
 Rôles et Permissions :
 admin : Accès complet à toutes les fonctionnalités.
 rh : Accès aux fonctionnalités liées aux employés, emplois, hiérarchie, congés, notifications, et demandes de récupération.
