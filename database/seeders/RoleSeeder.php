@@ -33,6 +33,8 @@ class RoleSeeder extends Seeder
             'maange Conges',
             'notification',
             'manage profile',
+            'manage recuperation',
+            'demande recuperation',
            
 
         ],
@@ -42,11 +44,14 @@ class RoleSeeder extends Seeder
             'notification',
             'manage profile',
             'demande conges',
+            'demande recuperation',
         ],
         'employee'=>[
             'maange Hierarchy',
             'manage profile',
             'demande conges',
+            'demande recuperation',
+
         ],
     ];
 

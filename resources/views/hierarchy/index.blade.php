@@ -19,6 +19,8 @@
                         
                         <!-- Middle Level: Managers -->
                         <ul>
+
+                            
                             @forelse($groupedEmployees['manager'] ?? [] as $index => $manager)
                                 <li>
                                     <div class="node manager-node">
