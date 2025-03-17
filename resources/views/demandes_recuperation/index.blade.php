@@ -17,7 +17,7 @@
 
                     <div class="flex justify-between items-center mb-6">
                         <h1 class="text-2xl font-bold">Demandes de récupération</h1>
-                        @if (Auth::user()->hasRole('emplyee') || Auth::user()->hasRole('manager'))
+                        @if (Auth::user()->hasRole('employee') || Auth::user()->hasRole('manager'))
                         <a href="{{ route('demandes_recuperation.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                             Créer une demande
                         </a>

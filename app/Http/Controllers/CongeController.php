@@ -30,16 +30,7 @@ class CongeController extends Controller
     public function store(RequestConge $request)
     {
 
-    //     $utilisateur = Auth::user();
-
-    // // Calculer le solde de congés disponible
-    // $soldeConges = $utilisateur->calculerSoldeConges();
-
-    // // Vérifier si le solde est suffisant
-    // $joursDemandes = $request->date_debut->diffInDays($request->date_fin) + 1;
-    // if ($joursDemandes > $soldeConges) {
-    //     return redirect()->back()->with('error', 'Solde de congés insuffisant.');
-    // }
+    
 
     
         $conge = Conge::create([
@@ -78,14 +69,13 @@ class CongeController extends Controller
             }
         }
 
-        return redirect()->route('conges.index')->with('success', 'Demande de congé soumise avec succès.');
+        return redirect()->route('conges.index')->with('success', 'Demande de conge soumise avec succes.');
     }
 
     // affichage les demandes de conge pour le rh et manager
     public function gestion()
     {
         $conges = Conge::with(['user'])->where('statut','en_attente')->get();
-        
         return view('conges.gestion', compact('conges'));
     }
     
@@ -99,7 +89,7 @@ class CongeController extends Controller
  
          $conge->update(['approbation_manager' => $request->approbation_manager]);
  
-         return redirect()->route('conges.gestion')->with('success', 'Statut de la demande mis à jour.');
+         return redirect()->route('conges.gestion')->with('success', 'Statut de la demande misse a jour.');
      }
       
          // Approuver ou rejeter une demande de conge par  (RH)
@@ -118,7 +108,7 @@ class CongeController extends Controller
             $conge->update(['statut' => 'rejeté']);
         }
 
-        return redirect()->route('conges.gestion')->with('success', 'Statut de la demande mis à jour.');
+        return redirect()->route('conges.gestion')->with('success', 'Statut de la demande misse a jour.');
     }
 
 

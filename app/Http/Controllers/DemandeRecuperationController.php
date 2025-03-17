@@ -15,7 +15,7 @@ class DemandeRecuperationController extends Controller
     public function index()
     {
         if (Auth::user()->hasRole('rh')) {
-            $demandes = DemandeRecuperation::with('user')->get();
+            $demandes = DemandeRecuperation::with('user')->where('statut','en_attente')->get();
         } 
         else {
             $demandes = DemandeRecuperation::where('user_id', Auth::id())->get();
@@ -57,7 +57,7 @@ class DemandeRecuperationController extends Controller
     }
 
      /**
-     * Affiche les détails d'une demande de récupération.
+     * Affiche les détails d'une demande de recuperation.
      */
     public function show($id)
 {
@@ -73,7 +73,7 @@ class DemandeRecuperationController extends Controller
 
 
     /**
-     * Met à jour le statut d'une demande de récupération (pour les RH).
+     * Met à jour le statut d'une demande de recuperation (pour les RH).
      */
     public function updateStatut(Request $request, DemandeRecuperation $demande)
     {
@@ -88,7 +88,7 @@ class DemandeRecuperationController extends Controller
             $user->save();
         }
         return redirect()->route('demandes_recuperation.index')
-            ->with('success', 'Statut de la demande mis à jour.');
+            ->with('success', 'Statut de la demande misse a jour.');
     }
 
 }

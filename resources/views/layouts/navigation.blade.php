@@ -11,50 +11,70 @@
                 </div>
 
                 <!-- Navigation Links -->
-             
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('departments.index')" :active="request()->routeIs('departments.index')">
-                        {{ __('Departement') }}
-                    </x-nav-link>
-                </div>
+             @can('manage departments')
+             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('departments.index')" :active="request()->routeIs('departments.index')">
+                    {{ __('Departement') }}
+                </x-nav-link>
+            </div>
+             @endcan
+               
             
-                
+                @can('manage emplois')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('emplois.index')" :active="request()->routeIs('emplois.index')">
                         {{ __('Emplois') }}
                     </x-nav-link>
-                </div>
-                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('contracts.index')" :active="request()->routeIs('contracts.index')">
-                        {{ __('Contract') }}
-                    </x-nav-link>
-                </div>
+                </div> 
+                @endcan
+
+               @can('manage contact')
+               <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('contracts.index')" :active="request()->routeIs('contracts.index')">
+                    {{ __('Contract') }}
+                </x-nav-link>
+            </div>
+               @endcan
+                 
+                @can('manage emplyees')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                         {{ __('Employees') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                @endcan
+                 @can('manage hierarchy')
+                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('hierarchy.index')" :active="request()->routeIs('hierarchy.index')">
                         {{ __('Hierarchy') }}
                     </x-nav-link>
                 </div>
+                 @endcan
+               
+                @can('demande conges')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('conges.index')" :active="request()->routeIs('conges.index')">
                         {{ __('Demande Conges') }}
                     </x-nav-link>
                 </div>
+                @endcan
                
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('conges.gestion')" :active="request()->routeIs('conges.gestion')">
-                        {{ __('Manage Conges') }}
-                    </x-nav-link>
-                </div>
+
+               @can('manage conges')
+               <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <x-nav-link :href="route('conges.gestion')" :active="request()->routeIs('conges.gestion')">
+                    {{ __('Manage Conges') }}
+                </x-nav-link>
+            </div>
+               @endcan
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('conges.solde',Auth::user()->id)" :active="request()->routeIs('conges.solde')">
                         {{ __('Mes Détails') }}
                     </x-nav-link>
                 </div>
+
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('demandes_recuperation.index')" :active="request()->routeIs('demandes_recuperation.index')">
                         {{ __('Demande De Recuperation') }}
