@@ -1,90 +1,88 @@
 # Evently - Advanced Event Management Platform
 ``` Project Context
-Evently is a comprehensive platform that enables organizers to create, manage, and promote both online and in-person events. Integrated with Stripe, it offers a seamless and secure ticket purchasing experience for participants. ```
+Evently est une plateforme complète permettant aux organisateurs de créer, gérer et promouvoir des événements en ligne et en présentiel. Intégrée avec Stripe, elle offre une expérience d'achat de billets fluide et sécurisée pour les participants.  
 
-This project aims to develop an advanced Eventbrite clone by following best practices in PHP MVC with PostgreSQL and integrating AJAX for dynamic interactions.
+Ce projet vise à développer un clone avancé d’Eventbrite en suivant les bonnes pratiques en PHP MVC avec PostgreSQL et en intégrant AJAX pour des interactions dynamiques.  
 
-# Objectives:
-✅ Organizers can publish and manage events.
-✅ Participants can book tickets online.
-✅ An admin back-office allows management of users and events.
-✅ Advanced statistics provide detailed insights into events and sales.
+# Objectifs :  
+✅ Les organisateurs peuvent publier et gérer des événements.  
+✅ Les participants peuvent réserver des billets en ligne.  
+✅ Un back-office admin permet la gestion des utilisateurs et des événements.  
+✅ Des statistiques avancées fournissent des analyses détaillées sur les événements et les ventes.  
 
- # Key Features
-- User Management
-✔ Secure registration and login (email, password hashed with bcrypt).
-✔ Role management: Organizer, Participant, Admin.
-✔ User profile (avatar, name, event history).
-✔ Notification system (email, site alerts).
+# Fonctionnalités Clés  
 
-- Event Management
-✔ Create and edit events (title, description, date, location, price, capacity).
-✔ Manage categories and tags (Conference, Concert, Sports, etc.).
-✔ Add promotional images and videos.
-✔ Event validation by an administrator.
-✔ Featured event system (sponsored events).
+- **Gestion des Utilisateurs**  
+✔ Inscription et connexion sécurisées (email, mot de passe haché avec bcrypt).  
+✔ Gestion des rôles : Organisateur, Participant, Administrateur.  
+✔ Profil utilisateur (avatar, nom, historique des événements).  
+✔ Système de notifications (email, alertes sur le site).  
 
-- Booking & Payment
-✔ Purchase tickets with different options (free, paid, VIP, early bird).
-✔ Secure payment via Stripe or PayPal (sandbox mode).
-✔ Generate QR codes for ticket validation at entry.
-✔ Refund and ticket cancellation system.
-✔ Download tickets as PDFs after purchase.
+- **Gestion des Événements**  
+✔ Création et modification des événements (titre, description, date, lieu, prix, capacité).  
+✔ Gestion des catégories et tags (Conférence, Concert, Sport, etc.).  
+✔ Ajout d’images et vidéos promotionnelles.  
+✔ Validation des événements par un administrateur.  
+✔ Système d’événements mis en avant (événements sponsorisés).  
 
-- Organizer Dashboard
-✔ List of created events with status (active, pending, completed).
-✔ Real-time sales and booking statistics.
-✔ Export participants list in CSV/PDF format.
-✔ Manage promotions and discounts (promo codes, early bird offers).
+- **Réservation & Paiement**  
+✔ Achat de billets avec différentes options (gratuit, payant, VIP, early bird).  
+✔ Paiement sécurisé via Stripe ou PayPal (mode sandbox).  
+✔ Génération de QR codes pour la validation des billets à l’entrée.  
+✔ Système de remboursement et d’annulation des billets.  
+✔ Téléchargement des billets au format PDF après l'achat.  
 
-- Admin Back-Office
-✔ Manage users (ban, delete, modify).
-✔ Manage events (validate, delete, modify).
-✔ Global statistics (users, tickets sold, revenue).
-✔ Content moderation (comments, reports).
+- **Tableau de Bord de l’Organisateur**  
+✔ Liste des événements créés avec statut (actif, en attente, terminé).  
+✔ Statistiques en temps réel sur les ventes et réservations.  
+✔ Exportation de la liste des participants en format CSV/PDF.  
+✔ Gestion des promotions et réductions (codes promo, offres early bird).  
 
-- Dynamic Interactions with AJAX
-✔ Dynamic event loading (pagination without reloading).
-✔ Advanced search and filters (category, price, date, location).
-✔ Search autocomplete with suggestions.
-✔ Real-time form validation (email availability, password security).
+- **Back-Office Administrateur**  
+✔ Gestion des utilisateurs (bannir, supprimer, modifier).  
+✔ Gestion des événements (valider, supprimer, modifier).  
+✔ Statistiques globales (utilisateurs, billets vendus, revenus).  
+✔ Modération du contenu (commentaires, signalements).  
 
- User Stories
-👥 As a Participant, I want to:
+- **Interactions Dynamiques avec AJAX**  
+✔ Chargement dynamique des événements (pagination sans rechargement).  
+✔ Recherche et filtres avancés (catégorie, prix, date, lieu).  
+✔ Autocomplétion des recherches avec suggestions.  
+✔ Validation des formulaires en temps réel (disponibilité email, sécurité mot de passe).  
 
-✅ Create an account and log in with email or Google/Facebook.
-✅ Browse and filter event listings by category.
-✅ Book a ticket online and receive a QR code.
-✅ Cancel my reservation and request a refund.
-✅ Receive notifications for upcoming events.
+# User Stories  
 
-👤 As an Organizer, I want to:
+👥 **En tant que Participant, je veux :**  
+✅ Créer un compte et me connecter avec email ou Google/Facebook.  
+✅ Parcourir et filtrer la liste des événements par catégorie.  
+✅ Réserver un billet en ligne et recevoir un QR code.  
+✅ Annuler ma réservation et demander un remboursement.  
+✅ Recevoir des notifications pour les événements à venir.  
 
-✅ Publish an event and set ticket prices.
-✅ Manage my sales and view registration statistics.
-✅ Offer promo codes and manage discounts.
-✅ Export participant lists in CSV or PDF format.
+👤 **En tant qu’Organisateur, je veux :**  
+✅ Publier un événement et définir les prix des billets.  
+✅ Gérer mes ventes et consulter les statistiques d’inscription.  
+✅ Proposer des codes promo et gérer les réductions.  
+✅ Exporter la liste des participants en CSV ou PDF.  
 
-🛡️ As an Administrator, I want to:
+🛡️ **En tant qu’Administrateur, je veux :**  
+✅ Gérer les utilisateurs (bannir, modifier les rôles).  
+✅ Approuver ou rejeter les événements soumis.  
+✅ Suivre les statistiques globales et modérer le contenu.  
 
-✅ Manage users (ban, modify roles).
-✅ Approve or reject submitted events.
-✅ Monitor global statistics and moderate content.
+# Logique Métier  
 
-Business Logic
-📌 Role & Permission Management
+📌 **Gestion des Rôles & Permissions**  
+- Un Participant peut uniquement réserver des événements publics.  
+- Un Organisateur peut uniquement gérer ses propres événements.  
+- Un Administrateur a un accès complet (validation, modération, gestion).  
 
-A Participant can only book public events.
-An Organizer can only manage their own events.
-An Admin has full access (validation, moderation, management).
-📌 Booking System
+📌 **Système de Réservation**  
+- Vérifie la disponibilité des billets avant confirmation.  
+- Envoie un email avec le billet en pièce jointe après l’achat.  
+- Permet l’annulation sous certaines conditions (remboursement partiel ou total).  
 
-Verifies ticket availability before confirmation.
-Sends an email with the ticket as an attachment after purchase.
-Allows cancellations under specific conditions (partial or full refund).
-📌 Advanced Security
-
-Protection against CSRF and SQL injections.
-Password hashing with bcrypt.
-Secure session management.
-
+📌 **Sécurité Avancée**  
+- Protection contre les attaques CSRF et injections SQL.  
+- Hachage des mots de passe avec bcrypt.  
+- Gestion sécurisée des sessions.  
