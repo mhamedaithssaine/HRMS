@@ -1,4 +1,4 @@
-` HRMS - Human Resource Management System
+``HRMS - Human Resource Management System
 Project
 
 # HRMS is an advanced web platform for human resource management, designed to help businesses efficiently structure their teams, manage employees, contracts, and departments. The project is developed using Laravel 11 with Tailwind CSS, integrating Spatie Laravel Permissions and Livewire for a dynamic user experience.
@@ -10,11 +10,11 @@ Project
  -Manage employment contracts with secure document storage.
  -Dynamically visualize the hierarchical structure through an organizational chart.
 # Key Features
-``1. User & Company Management
+1. User & Company Management
  -Create a company account with a secure personal space.
  -Authentication via Laravel Breeze or Jetstream.
  -Role and permission management (Admin, Manager, Employee) with Spatie.
- -Customizable user profiles (photo, contact, etc.).``
+ -Customizable user profiles (photo, contact, etc.).
 2. Employee Management
  -Create, update, and delete employee profiles.
  -Detailed information: name, date of birth, contact, etc.
@@ -43,4 +43,4 @@ Individual work
 -5 min: Web application demo
 -5 min: Code review & technical questions
 -10 min: Real-life scenario
-`
+``
