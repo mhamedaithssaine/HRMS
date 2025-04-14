@@ -10,11 +10,11 @@ Project
  -Manage employment contracts with secure document storage.
  -Dynamically visualize the hierarchical structure through an organizational chart.
 # Key Features
-1. User & Company Management
+``1. User & Company Management
  -Create a company account with a secure personal space.
  -Authentication via Laravel Breeze or Jetstream.
  -Role and permission management (Admin, Manager, Employee) with Spatie.
- -Customizable user profiles (photo, contact, etc.).
+ -Customizable user profiles (photo, contact, etc.).``
 2. Employee Management
  -Create, update, and delete employee profiles.
  -Detailed information: name, date of birth, contact, etc.
